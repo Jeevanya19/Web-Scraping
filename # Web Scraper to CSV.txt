@@ -1,0 +1,71 @@
+# Web Scraper to CSV
+
+## Description
+A simple Python web scraper that extracts publicly available book information from a permitted website and saves it to a CSV file. It uses Requests to retrieve webpage content and BeautifulSoup to parse HTML.
+
+## Features
+- Checks `robots.txt` before scraping.
+- Requires separate review of website terms and conditions.
+- Extracts book titles, prices, and availability.
+- Saves extracted information to `books.csv`.
+- Handles HTTP errors, connection failures, and timeouts.
+- Uses a 2-second delay before the page request.
+- Stops if the server returns HTTP 403 or 429.
+- Uses a low request rate and avoids concurrent requests.
+
+## Requirements
+- Python 3.x
+- `requests`
+- `beautifulsoup4`
+
+## Installation
+Install the required libraries:
+
+```bash
+pip install requests beautifulsoup4
+```
+
+## How to Run
+1. Save the Python program as `scraper.py`.
+2. Verify that the target website permits automated scraping.
+3. Open a terminal in the project directory.
+4. Run:
+
+```bash
+python scraper.py
+```
+
+## Output
+The program creates `books.csv` containing three columns:
+
+- Title
+- Price
+- Availability
+
+The CSV file can be opened using Microsoft Excel, Google Sheets, or any text editor.
+
+## Responsible Scraping
+- Respect `robots.txt` and website terms.
+- Scrape only permitted pages and publicly accessible information.
+- Follow stricter site-specific request limits.
+- Stop when access is denied or rate limits are reached.
+- Do not bypass CAPTCHAs, authentication, or other access controls.
+
+**Note:** A `robots.txt` check alone does not grant permission. Review the website's terms separately before scraping.
+
+## Project Structure
+
+```text
+web-scraper/
+├── scraper.py
+└── books.csv
+```
+
+## Learning Objectives
+- Send HTTP requests using Python.
+- Parse HTML with BeautifulSoup.
+- Extract structured webpage information.
+- Write data to CSV files.
+- Handle exceptions and HTTP status codes.
+- Apply responsible web-scraping practices.
+-
